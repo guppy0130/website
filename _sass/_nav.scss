@@ -1,0 +1,22 @@
+@import 'variables';
+
+nav {
+    width: 70%;
+    margin: 1em auto 2em;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (max-width: $small) {
+        flex-direction: column;
+        width: 85%;
+
+        a {
+            margin-bottom: 1em;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

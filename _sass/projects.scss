@@ -1,0 +1,26 @@
+@import 'no-margin';
+@import 'variables';
+
+.content {
+    display: flex;
+
+    article {
+        width: 50%;
+
+        h1 {
+            font-size: 1em;
+        }
+
+        @media screen and (max-width: $small) {
+            width: 100%;
+
+            .start-date {
+                &::before {
+                    content: '\a';
+                    white-space: pre;
+                }
+            }
+        }
+    }
+}
+

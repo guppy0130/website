@@ -1,0 +1,32 @@
+url: "http://inthemainfra.me"
+baseurl: ""
+title: "Yanglang Productions"
+livereload: true
+timezone: "America/Los_Angeles"
+collections:
+    - projects
+plugins:
+    - jekyll-responsive-image
+    - jekyll-seo-tag
+    - jekyll-sitemap
+    - jekyll-feed
+defaults:
+    - scope:
+          path: "assets/portfolio/**/*.jpg"
+      values:
+          img: true
+          portfolio: true
+    - scope:
+          path: "assets/portfolio/**/*.mp4"
+      values:
+          vid: true
+          portfolio: true
+responsive_image:
+    template: _includes/responsive-image.html
+    sizes:
+        - width: 800
+        - width: 500
+        - width: 300
+    output_path_format: assets/resized/%{width}/%{filename}.jpg
+    save_to_source: false
+    # output_path_format: assets/resized/%{width}/%{filename}.webp

@@ -1,0 +1,43 @@
+@import 'nav';
+
+body {
+    background: $backgroundColor;
+    color: $bodyColor;
+    font-family: $bodyFont;
+    font-size: 1.4em;
+    margin: 0;
+    width: 100%;
+
+    @media screen and (max-width: $tiny) {
+        font-size: 1em;
+    }
+}
+
+pre, code {
+    font-family: $monoFont;
+    white-space: pre-wrap;
+
+    @media screen and (max-width: $small) {
+        font-size: 0.8rem;
+    }
+}
+
+.highlight {
+    margin: 0;
+    width: 100%;
+    overflow: auto;
+}
+
+a {
+    color: $accentColor;
+    text-decoration: none;
+
+    &:visited {
+        color: $accentColor;
+    }
+
+    &:hover {
+        color: $accentColor;
+        text-decoration: underline;
+    }
+}

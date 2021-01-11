@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>{{ site.title }} - {{ page.title }} </title>
+  {% if layout.css %}
+  <link rel="stylesheet" href="{{ layout.css | prepend: '/assets/css/' | append: '.css' }}">
+  {% endif %}
+  {% if page.css %}
+  <link rel="stylesheet" href="{{ page.css | prepend: '/assets/css/' | append: '.css' }}">
+  {% endif %}
+</head>
+
+<body>
+  {% include nav.html %}
+  {{ content }}
+</body>
+
+</html>

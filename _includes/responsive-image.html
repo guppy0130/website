@@ -1,0 +1,11 @@
+{% assign largest = resized | sort: 'width' | last %}
+{% assign largest2 = resized | sort: 'width'%}
+
+{% capture srcset %}
+{% for i in largest2 %}
+/{{ i.path }} {{ i.width }}w,
+{% endfor %}
+{% endcapture %}
+
+<img srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w" loading="lazy" src="/{{ path }}"
+  sizes="(max-width: 1200px) 300px, (max-width: 2000px) 500px, (max-width: 3200px) 800px, 100vw">
