@@ -1,4 +1,5 @@
 FROM jekyll/jekyll
+LABEL org.opencontainers.image.source https://github.com/guppy0130/website
 
 ENV GEM_HOME "/usr/local/bundle"
 ENV GEM_PATH "/usr/local/bundle"
