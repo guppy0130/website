@@ -65,6 +65,8 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: _site
+      - name: Debug working directories
+        run: ls -la && ls -la _site
       - name: Deploy
         uses: amondnet/vercel-action@v20
         with:
