@@ -56,7 +56,7 @@ jobs:
         with:
           path: _site
   deploy_site:
-    name: Deploy artifacts as site
+    name: Deploy site
     runs-on: ubuntu-latest # do not use container
     needs: build_site # must have artifacts before uploading
     steps:

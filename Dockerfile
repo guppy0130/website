@@ -5,7 +5,7 @@ ENV GEM_HOME "/usr/local/bundle"
 ENV GEM_PATH "/usr/local/bundle"
 
 RUN apk del imagemagick-dev && apk add imagemagick6-dev ffmpeg parallel \
-    util-linux
+    util-linux git-lfs
 
 # Add gemfile + lock
 ADD Gemfile /srv/jekyll
