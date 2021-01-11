@@ -42,8 +42,6 @@ jobs:
     needs: build_image # build the image first, then run this task
     container:
       image: ghcr.io/guppy0130/jekyll
-      volumes:
-        - "${{ GITHUB_WORKSPACE }}:/srv/jekyll"
       env:
         JEKYLL_ENV: production
     steps:
