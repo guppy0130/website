@@ -60,6 +60,11 @@ jobs:
     runs-on: ubuntu-latest # do not use container
     needs: build_site # must have artifacts before uploading
     steps:
+      # this clone is unnecessary, but vercel-action will fail without it
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          lfs: true
       - name: Download artifacts
         uses: actions/download-artifact@v2
         with:

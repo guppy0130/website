@@ -12,6 +12,9 @@ dirs:
 video: dirs
 	chmod +x video-webm.sh && ./video-webm.sh
 
+# github actions doesn't like it if you use bundler here
+# it's likely due to the fact that all actions in the clone-dir are run as root
+# and the jekyll:jekyll user is required for bundler (maybe from source image?)
 build: dirs
 	jekyll build --trace
 
