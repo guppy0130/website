@@ -2,7 +2,7 @@ container_command = docker
 build_command = docker buildx
 
 ci: clean
-	mkdir _site .jekyll_cache && chmod +x video-webm.sh && ./video-webm.sh && bundle exec jekyll build
+	mkdir -p _site .jekyll-cache && chmod +x video-webm.sh && ./video-webm.sh && bundle exec jekyll build --trace
 
 clean:
 	rm -rf _site vendor .jekyll-cache
