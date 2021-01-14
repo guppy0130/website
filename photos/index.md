@@ -16,7 +16,7 @@ css: photos
 {% endresponsive_image_block %}
 {% endif %}
 {% if piece.vid %}
-  <video autoplay loop>
+  <video autoplay loop muted>
     <source src="{{ piece.path | replace: 'mp4', 'webm' }}" type="video/webm">
     <source src="{{ piece.path }}" type="video/mp4">
   </video>

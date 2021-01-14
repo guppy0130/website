@@ -1,5 +1,7 @@
+---
 url: "http://inthemainfra.me"
 baseurl: ""
+host: "0.0.0.0"
 title: "Yanglang Productions"
 livereload: true
 timezone: "America/Los_Angeles"

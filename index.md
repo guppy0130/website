@@ -38,10 +38,48 @@ function typed() {
     });
 }
 
-//if ('serviceWorker' in navigator) {
-//    navigator.serviceWorker.register('/sw.js', {
-//        scope: '/'
-//    });
-//}
+function hasLocalStorage() {
+    try {
+        storage = window.localStorage;
+        var x = '__storage_test';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    } catch(e) {
+        return false;
+    }
+}
+
+let version = 'v1'
+let cacheName = `cache-${version}`
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js', {
+        scope: '/'
+    });
+
+    if (hasLocalStorage()) {
+        // if we do not have the localStorage, don't bother registering the
+        // cache magic
+        navigator.serviceWorker.onmessage = function(event) {
+            var message = JSON.parse(event.data);
+            console.log('received', message);
+            if (message.type !== 'refresh') {
+                // not an update. no need to refresh.
+                return;
+            }
+            if (message.eTag === localStorage.getItem(message.url)) {
+                // not an update for this item. no need to refresh.
+                // getItem() returns null for something it doesn't have.
+                return;
+            }
+            // at this point, something should be updatable.
+            // update localStorage with the url, eTag
+            localStorage.setItem(message.url, message.eTag);
+            console.log(message);
+        };
+    }
+}
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11" integrity="sha256-SbjNN9cJzRfdpoa82bqXKC5uMg+oqbWvVAzPlubCdNc=" crossorigin="anonymous" async defer onload="typed()"></script>

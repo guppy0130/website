@@ -4,7 +4,7 @@ build_command = docker buildx
 ci: | clean dirs video build
 
 clean:
-	rm -rf _site vendor .jekyll-cache
+	rm -rf _site vendor .jekyll-cache *.log
 
 dirs:
 	mkdir -p _site .jekyll-cache
@@ -22,7 +22,10 @@ image:
 	$(build_command) build --tag jekyll:latest .
 
 build-docker: image
-	$(container_command) run --rm -v $(CURDIR):/srv/jekyll -e 'JEKYLL_ENV=production' -it jekyll:latest video-webm.sh && bundle exec jekyll build
+	$(container_command) run --rm -v $(CURDIR):/srv/jekyll -e 'JEKYLL_ENV=production' -it jekyll:latest video-webm.sh && jekyll build
 
 dev-docker: image
-	$(container_command) run --rm -v $(CURDIR):/srv/jekyll -p 4000:4000 -p 35729:35729 --name jekyll -it jekyll:latest video-webm.sh && bundle exec jekyll build
+	$(container_command) run --rm -v $(CURDIR):/srv/jekyll -p 4000:4000 -p 35729:35729 --name jekyll -it jekyll:latest bundle exec jekyll serve --force_polling
+
+dev:
+	$(container_command) run --rm -v $(CURDIR):/srv/jekyll -p 4000:4000 -p 35729:35729 --name jekyll -it ghcr.io/guppy0130/jekyll:latest bundle exec jekyll serve --force_polling
