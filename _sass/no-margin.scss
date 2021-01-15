@@ -1,57 +1,49 @@
-@import 'nav';
-@import 'footer';
+@import "nav";
+@import "footer";
 
 body {
-    background: var(--background-color);
-    color: var(--color);
-    font-family: $bodyFont;
-    font-size: 1.4em;
-    margin: 0;
-    width: 100%;
-    transition:
-        color $animationDuration $animationTiming,
-        background-color $animationDuration $animationTiming;
+  background: var(--background-color);
+  color: var(--color);
+  font-family: $bodyFont;
+  font-size: 1.4em;
+  margin: 0;
+  width: 100%;
+  transition: color $animationDuration $animationTiming,
+    background-color $animationDuration $animationTiming;
 
-    .content {
-        min-height: 100vh;
-    }
+  .content {
+    min-height: 100vh;
+  }
 
-    @media screen and (max-width: $tiny) {
-        font-size: 1em;
-    }
+  @media screen and (max-width: $tiny) {
+    font-size: 1em;
+  }
 }
 
-pre, code {
-    font-family: $monoFont;
-    white-space: pre-wrap;
+pre,
+code {
+  font-family: $monoFont;
+  white-space: pre-wrap;
 
-    @media screen and (max-width: $small) {
-        font-size: 0.8rem;
-    }
-}
+  @media screen and (max-width: $small) {
+    font-size: 0.8rem;
+  }
 
-.highlight {
-    margin: 0;
-    width: 100%;
-    overflow: auto;
-}
-
-.highlighter-rouge {
-    background-color: hsla(var(--background-h), var(--background-s), calc(var(--background-l) - 20%), 50%);
-    padding: 1em;
-    border-radius: $borderRadius;
+  &[data-lang]::before {
+    content: attr(data-lang);
+  }
 }
 
 a {
+  color: var(--accent-color);
+  text-decoration: none;
+
+  &:visited {
     color: var(--accent-color);
-    text-decoration: none;
+  }
 
-    &:visited {
-        color: var(--accent-color);
-    }
-
-    &:hover {
-        color: var(--accent-color);
-        text-decoration: underline;
-    }
+  &:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+  }
 }

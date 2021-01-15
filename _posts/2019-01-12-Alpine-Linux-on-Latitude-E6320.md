@@ -23,13 +23,13 @@ pkgname=b43-firmware
 pkgrel=1
 pkgdesc="Firmware for b43 driver"
 url="http://linuxwireless.org/en/users/Drivers/b43#firmware_installation
-@@ -17,6 +17,6 @@
+@@ -17,4 +17,4 @@
 build() {
     install -d "$pkgdir"/lib/firmware
     b43-fwcutter -w "$pkgdir"/lib/firmware \
 -       "$srcdir"/broadcom-wl-$pkgver/driver/wl_apasta_mimo.o
 +       "$srcdir"/broadcom-wl-$pkgver/linux/wl_apasta.o
-}
+@@ -22,1 +22,1 @@
 -md5sums="0c6ba9687114c6b598e8019e262d9a60  broadcom-wl-4.150.10.5.tar.bz2"
 +md5sums="f4e357b09eaf5d8b1f1920cf3493a555  broadcom-wl-5.100.138.tar.bz2"
 ```
