@@ -7,9 +7,25 @@ nav {
     display: flex;
     justify-content: space-between;
 
+    .separator {
+        flex-grow: 2;
+    }
+
+    .link {
+        margin-left: 1em;
+    }
+
     @media screen and (max-width: $small) {
         flex-direction: column;
         width: 85%;
+
+        .separator {
+            display: none;
+        }
+
+        .link {
+            margin-left: initial;
+        }
 
         a {
             margin-bottom: 1em;
@@ -19,4 +35,10 @@ nav {
             }
         }
     }
+}
+
+#refresh-notif {
+    display: none;
+    text-align: center;
+    margin-bottom: 1em;
 }

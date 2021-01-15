@@ -1,0 +1,50 @@
+<script>
+    function hasLocalStorage() {
+        try {
+            storage = window.localStorage;
+            var x = '__storage_test';
+            storage.setItem(x, x);
+            storage.removeItem(x);
+            return true;
+        } catch (e) {
+            return false;
+        }
+    }
+
+    let version = 'v1'
+    let cacheName = `cache-${version}`
+
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', {
+            scope: '/'
+        });
+
+        if (hasLocalStorage()) {
+            // if we do not have the localStorage, don't bother registering the
+            // cache magic
+            navigator.serviceWorker.onmessage = function (event) {
+                // parse the message received and see if it's important
+                var message = JSON.parse(event.data);
+                // getItem() returns null for something it doesn't have.
+                var previousETag = localStorage.getItem(message.url);
+
+                // not an update. no need to refresh.
+                if (message.type !== 'refresh') {
+                    return;
+                }
+                // not an update for this item. no need to refresh.
+                if (message.eTag === previousETag) {
+                    return;
+                }
+                // at this point, we need to update the eTag, so go ahead and
+                // do that
+                localStorage.setItem(message.url, message.eTag);
+                // if there was a previous tag, go ahead and let the user know
+                // content has been updated.
+                if (previousETag !== null) {
+                    document.getElementById('refresh-notif').style.display = 'block';
+                }
+            };
+        }
+    }
+</script>

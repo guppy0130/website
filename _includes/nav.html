@@ -1,8 +1,11 @@
 <nav>
     <a href="/">{{ site.title }}</a>
+    <div class="separator"></div>
 
     {% assign nav_elems = site.pages | where: "nav", true %}
     {% for nav_elem in nav_elems %}
-    <a href="{{ nav_elem.url }}">{{ nav_elem.title }}</a>
+    <a href="{{ nav_elem.url }}" class="link">{{ nav_elem.title }}</a>
     {% endfor %}
 </nav>
+
+{% include update-ready.html %}

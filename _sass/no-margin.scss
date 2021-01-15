@@ -1,4 +1,5 @@
 @import 'nav';
+@import 'footer';
 
 body {
     background: $backgroundColor;
@@ -7,6 +8,10 @@ body {
     font-size: 1.4em;
     margin: 0;
     width: 100%;
+
+    .content {
+        min-height: 100vh;
+    }
 
     @media screen and (max-width: $tiny) {
         font-size: 1em;

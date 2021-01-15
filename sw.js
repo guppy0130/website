@@ -38,7 +38,6 @@ async function refresh(response) {
                 url: response.url,
                 eTag: response.headers.get('ETag')
             };
-            self.console.log(message);
             client.postMessage(JSON.stringify(message))
         });
     });
