@@ -2,8 +2,8 @@
 @import 'footer';
 
 body {
-    background: $backgroundColor;
-    color: $bodyColor;
+    background: var(--background-color);
+    color: var(--color);
     font-family: $bodyFont;
     font-size: 1.4em;
     margin: 0;
@@ -34,15 +34,15 @@ pre, code {
 }
 
 a {
-    color: $accentColor;
+    color: var(--accent-color);
     text-decoration: none;
 
     &:visited {
-        color: $accentColor;
+        color: var(--accent-color);
     }
 
     &:hover {
-        color: $accentColor;
+        color: var(--accent-color);
         text-decoration: underline;
     }
 }

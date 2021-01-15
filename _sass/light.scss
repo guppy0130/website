@@ -1,0 +1,13 @@
+$backgroundColor: #ffffff;
+$bodyColor: #333333;
+$accentColor: #009fb7;
+
+:root {
+    color-scheme: light;
+    --color: #{$bodyColor};
+    --background-color: #{$backgroundColor};
+    --accent-color: #{$accentColor};
+    --color-h: #{hue($bodyColor)};
+    --color-s: #{saturation($bodyColor)};
+    --color-l: #{lightness($bodyColor)};
+}

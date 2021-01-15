@@ -22,7 +22,7 @@ p {
 }
 
 .typed {
-    color: $accentColor;
+    color: var(--accent-color);
 
     @media screen and (max-width: $small) {
         &::before {
