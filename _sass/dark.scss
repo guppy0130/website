@@ -10,4 +10,7 @@ $accentColor: #009fb7;
     --color-h: #{hue($bodyColor)};
     --color-s: #{saturation($bodyColor)};
     --color-l: #{lightness($bodyColor)};
+    --background-h: #{hue($backgroundColor)};
+    --background-s: #{saturation($backgroundColor)};
+    --background-l: #{lightness($backgroundColor)};
 }
