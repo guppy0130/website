@@ -55,5 +55,5 @@ self.addEventListener('fetch', event => {
     }
     // respond immediately. Updates can wait, who cares?
     event.respondWith(fromCache(request));
-    event.waitUntil(update(request).then(refresh));
+    update(request).then(refresh);
 });

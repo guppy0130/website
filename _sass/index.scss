@@ -21,13 +21,31 @@ p {
     }
 }
 
-.typed {
+.typing {
+    // prefix typed content with a space. in the case the typer is not active
+    // do not have a space, so that the period in ::after immediately follows
+    &::before {
+        content: ' ';
+    }
+
+    // only accent-color if typing, default otherwise
     color: var(--accent-color);
 
+    // force newline on small screens
     @media screen and (max-width: $small) {
         &::before {
             content: '\a';
             white-space: pre;
         }
+    }
+}
+
+// the span should always end with a period, but the color of the period is
+// dependent on if there is an active typedjs (network, JS disabled, etc.).
+// the period should also come before the typedjs cursor, and should appear
+// even in the case where typer was not loaded.
+.typed {
+    &::after {
+        content: '.';
     }
 }

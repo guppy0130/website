@@ -7,11 +7,11 @@ Hello,
 
 # My name is Nicholas Yang.
 
-<h1>Let's make something <span class="typed"></span></h1>
+<h1 class="typed-prefix">Let's make something<span class="typed"></span></h1>
 
 Want to build something? Let's make it happen.
 
-California-based aspiring developer/photographer looking to make a meaningful difference.
+California-based developer/photographer looking to make a meaningful difference.
 
 ## Recent Posts
 
@@ -23,18 +23,24 @@ California-based aspiring developer/photographer looking to make a meaningful di
 function typed() {
     new Typed('.typed', {
         strings: [
-            'new.',
-            'exciting.',
-            'better.',
-            'look good.',
-            'creative.',
-            'that works.'
+            'new',
+            'exciting',
+            'better',
+            'look good',
+            'creative',
+            'that works'
         ],
         typeSpeed: 40,
         loop: true,
         backDelay: 1000,
         backSpeed: 30,
-        shuffle: true
+        shuffle: true,
+        onBegin: (self) => {
+            self.el.classList.add('typing');
+        },
+        onDestroy: (pos, self) => {
+            self.el.classList.remove('typing');
+        },
     });
 }
 
