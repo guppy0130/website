@@ -1,0 +1,10 @@
+@import 'no-margin';
+@import 'variables';
+@import 'post_fragment';
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-family: $monoFont;
+}

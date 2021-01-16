@@ -12,6 +12,7 @@ plugins:
     - jekyll-seo-tag
     - jekyll-sitemap
     - jekyll-feed
+    - jekyll-paginate-v2
 defaults:
     - scope:
           path: "assets/portfolio/**/*.jpg"
@@ -32,3 +33,8 @@ responsive_image:
     output_path_format: assets/resized/%{width}/%{filename}.jpg
     save_to_source: false
     # output_path_format: assets/resized/%{width}/%{filename}.webp
+
+pagination:
+    enabled: true
+    per_page: 5
+    sort_reverse: true  # newest first

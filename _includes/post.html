@@ -1,5 +1,6 @@
-<article>
+<article class="post-fragment">
     <a href="{{ include.post.url }}">{{ include.post.title }}</a>
-    <p><time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date | date_to_string }}</time></p>
-    <p>{{ include.post.excerpt }}</p>
+    <p class="date-time"><time datetime="{{ include.post.date | date_to_xmlschema }}">{{ include.post.date |
+            date_to_string }}</time></p>
+    {{ include.post.excerpt }}
 </article>

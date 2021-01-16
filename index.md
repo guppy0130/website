@@ -13,7 +13,7 @@ Want to build something? Let's make it happen.
 
 California-based developer/photographer looking to make a meaningful difference.
 
-## Recent Posts
+## [Recent Posts](/blog/)
 
 {% for post in site.posts limit:5 %}
 {% include post.html post=post %}
