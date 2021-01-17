@@ -1,5 +1,5 @@
 ---
-name: Publish Docker image
+name: Deploy
 
 on:
   push:
@@ -54,7 +54,7 @@ jobs:
           path: _site
           if-no-files-found: error # this should always upload something
   deploy_site:
-    name: Deploy site
+    name: Deploy Jekyll site
     runs-on: ubuntu-latest # do not use container
     needs: build_site # must have artifacts before uploading
     steps:
