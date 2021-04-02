@@ -5,9 +5,10 @@
 ```bash
 make ci # clean build
 make clean # rm artifacts
-make image # docker build image
+make image # docker buildx image
 make build # jekyll build
-make dev # build image + jekyll serve
+make dev # jekyll run public image
+make bump-deps # update Gemfile.lock
 ```
 
 The image needs (likely already configured by the included Dockerfile):
@@ -17,6 +18,5 @@ The image needs (likely already configured by the included Dockerfile):
 
 ## Notes
 
-* Jekyll 4.2.0 may break jekyll-responsive-image 1.5.5, [so here is the fix](https://github.com/wildlyinaccurate/jekyll-responsive-image/pull/103). The container already has the patch.
 * Iosevka 4.4.0
 * Use `video-webm.sh` to convert `mp4` to `webm` for web
