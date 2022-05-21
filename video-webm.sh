@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-AV_LOG_FORCE_COLOR=true  # always color ffmpeg output
+AV_LOG_FORCE_COLOR=true # always color ffmpeg output
 
 # params for webm conversion. This is CRF 30, and passlogfile/prefix based on
 # GNU parallel job number to remove collisions

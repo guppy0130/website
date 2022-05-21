@@ -7,5 +7,13 @@
 {% endfor %}
 {% endcapture %}
 
-<img srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w" loading="lazy" src="/{{ path }}"
-  sizes="(max-width: 1200px) 300px, (max-width: 2000px) 500px, (max-width: 3200px) 800px, 100vw">
+<picture>
+  <source type="image/webp" srcset="{{ srcset | strip_newlines }}" loading="lazy"
+    sizes="(max-width: 1200px) 300px, (max-width: 2000px) 500px, (max-width: 3200px) 800px, 100vw">
+  <source type="image/jpg" srcset="{{ srcset | replace: 'webp', 'jpg' | strip_newlines }}" loading="lazy"
+    sizes="(max-width: 1200px) 300px, (max-width: 2000px) 500px, (max-width: 3200px) 800px, 100vw">
+  <img src="/{{ path }}">
+</picture>
+
+<!-- <img srcset="{{ srcset | strip_newlines }} /{{ path }} {{ original.width }}w" loading="lazy" src="/{{ path }}"
+  sizes="(max-width: 1200px) 300px, (max-width: 2000px) 500px, (max-width: 3200px) 800px, 100vw"> -->

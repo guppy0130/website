@@ -9,16 +9,23 @@ build_site_command = $(build_run_base) -e 'JEKYLL_ENV=production'
 
 # the CI can take advantage of being in a linux environment to not have to run
 # the video target inside the container
-ci: | clean dirs video build
+ci: videos images build | ci-dirs
+
+ci-dirs: clean
+	$(MAKE) dirs
 
 clean:
 	rm -rf _site vendor .jekyll-cache *.log
 
 dirs:
-	mkdir -p _site .jekyll-cache
+	mkdir -p _site/assets/resized/{300,500,800} .jekyll-cache
 
-video: dirs
-	chmod +x video-webm.sh && ./video-webm.sh && rm *.log
+images: dirs
+	./image-webp.sh
+
+videos: dirs
+	./video-webm.sh
+	rm *.log
 
 # github actions doesn't like it if you use bundler here
 # it's likely due to the fact that all actions in the clone-dir are run as root

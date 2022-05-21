@@ -32,9 +32,8 @@ responsive_image:
         - width: 300
     output_path_format: assets/resized/%{width}/%{filename}.jpg
     save_to_source: false
-    # output_path_format: assets/resized/%{width}/%{filename}.webp
 
 pagination:
     enabled: true
     per_page: 5
-    sort_reverse: true  # newest first
+    sort_reverse: true # newest first

@@ -1,5 +1,4 @@
 $bodyFont: 'PT Sans', sans-serif;
-// $titleFont: 'IBM Plex Mono', monospace;
 $titleFont: 'Iosevka Heavy', monospace;
 $monoFont: 'Iosevka', monospace;
 $tiny: 350px;
@@ -15,12 +14,14 @@ $animationTiming: ease;
     font-family: 'Iosevka Heavy';
     font-display: 'swap';
     font-weight: 900;
-    src: url('/assets/fonts/iosevka-heavy.woff2') format('woff2');
+    src: local('Iosevka-Heavy'), local('Iosevka Heavy'),
+        url('/assets/fonts/iosevka-heavy.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Iosevka';
     font-display: 'swap';
     font-weight: 400;
-    src: url('/assets/fonts/iosevka-regular.woff2') format('woff2');
+    src: local('Iosevka'),
+        url('/assets/fonts/iosevka-regular.woff2') format('woff2');
 }

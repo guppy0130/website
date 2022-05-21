@@ -1,19 +1,24 @@
 @import 'no-margin';
 
 .content {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
 
-    img, video {
-        width: 25%;
+    @media screen and (max-width: $small) {
+        grid-template-columns: repeat(2, 50%);
+    }
+
+    @media screen and (max-width: $tiny) {
+        grid-template-columns: repeat(1, 100%);
+    }
+
+    img,
+    video,
+    picture {
+        width: 100%;
+        height: 100%;
         margin: 0;
-
-        @media screen and (max-width: $small) {
-            width: 50%;
-        }
-
-        @media screen and (max-width: $tiny) {
-            width: 100%;
-        }
+        object-fit: fill;
+        box-sizing: border-box;
     }
 }

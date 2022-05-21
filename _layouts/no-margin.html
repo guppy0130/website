@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US" }}">
+<html lang="{{ site.lang | default: 'en-US' }}">
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark light">
-  <meta charset="utf-8">
-  <title>{{ site.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
-  <link rel="stylesheet" href="/assets/css/dark.css" media="(prefers-color-scheme: dark)">
-  <link rel="stylesheet" href="/assets/css/light.css" media="(prefers-color-scheme: light)">
-  {% if layout.css %}
-  <link rel="stylesheet" href="{{ layout.css | prepend: '/assets/css/' | append: '.css' }}">
-  {% endif %}
-  {% if page.css %}
-  <link rel="stylesheet" href="{{ page.css | prepend: '/assets/css/' | append: '.css' }}">
-  {% endif %}
-</head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark light">
+    <meta charset="utf-8">
+    <title>{{ site.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
+    <link rel="stylesheet" href="/assets/css/dark.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="/assets/css/light.css" media="(prefers-color-scheme: light)">
+    {% if layout.css %}
+    <link rel="stylesheet" href="{{ layout.css | prepend: '/assets/css/' | append: '.css' }}">
+    {% endif %}
+    {% if page.css %}
+    <link rel="stylesheet" href="{{ page.css | prepend: '/assets/css/' | append: '.css' }}">
+    {% endif %}
+  </head>
 
-<body>
-  {% include nav.html %}
+  <body>
+    {% include nav.html %}
 
-  {{ content }}
+    {{ content }}
 
-  {% include footer.html %}
-  {% include sw-client.html %}
-</body>
+    {% include footer.html %}
+    {% include sw-client.html %}
+  </body>
 
 </html>
