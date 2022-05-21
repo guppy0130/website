@@ -14,6 +14,7 @@
     {% if page.css %}
     <link rel="stylesheet" href="{{ page.css | prepend: '/assets/css/' | append: '.css' }}">
     {% endif %}
+    {% include favicon.html %}
   </head>
 
   <body>

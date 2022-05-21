@@ -3,6 +3,7 @@
 ## Building with Jekyll
 
 ```bash
+export JEKYLL_ENV="production"
 make [-j10]
 ```
 

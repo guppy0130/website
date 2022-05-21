@@ -1,4 +1,3 @@
-EXPORT JEKYLL_ENV := production
 build: images videos | dirs
 	jekyll build --trace
 

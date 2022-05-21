@@ -1,0 +1,30 @@
+{
+    "name": "Yanglang Productions",
+    "theme_color": "#111111",
+    "background_color": "#009fb7",
+    "display": "standalone",
+    "orientation": "portrait",
+    "id": "/",
+    "scope": "/",
+    "start_url": "/",
+    "icons": [
+        {
+            "src": "/assets/favicon/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/favicon/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/favicon/maskable_icon_x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
