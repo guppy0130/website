@@ -46,6 +46,6 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-project-name: website
-          alias-domains: yanglang.now.sh
+          alias-domains: yanglang.vercel.app
           working-directory: _site
           github-comment: false

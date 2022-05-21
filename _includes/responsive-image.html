@@ -8,9 +8,9 @@
 {% endcapture %}
 
 <picture>
-  <source type="image/webp" srcset="{{ srcset | strip_newlines }}" loading="lazy"
+  <source type="image/webp" srcset="{{ srcset | replace: 'jpg', 'webp' | strip_newlines }}" loading="lazy"
     sizes="(max-width: 1200px) 300px, (max-width: 2000px) 500px, (max-width: 3200px) 800px, 100vw">
-  <source type="image/jpg" srcset="{{ srcset | replace: 'webp', 'jpg' | strip_newlines }}" loading="lazy"
+  <source type="image/jpg" srcset="{{ srcset | strip_newlines }}" loading="lazy"
     sizes="(max-width: 1200px) 300px, (max-width: 2000px) 500px, (max-width: 3200px) 800px, 100vw">
   <img src="/{{ path }}">
 </picture>
