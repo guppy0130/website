@@ -1,0 +1,4 @@
+[submodule "themes/archie-zola"]
+	path = themes/archie-zola
+	url = https://github.com/guppy0130/archie-zola.git
+	branch = conditional_social_translations
